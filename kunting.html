@@ -1,0 +1,185 @@
+<!DOCTYPE html><html style="overflow: auto;"><head>
+    <meta charset="utf-8">
+    <title>走近昆汀</title>
+
+    <style type="text/css">
+        body, ul, h2, h3, h4, form, input, textarea, select {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            border: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0
+        }
+        body {
+            background-color: black;
+            width: 100%;
+        }
+
+        .container { /*最大的div*/
+            background-image: url("image/index1.jpg");
+            width: 100%;
+            height: 100vh;
+            margin: auto;
+            position: relative;
+            background-size: cover;
+        }
+
+        /*标题*/
+        #title_slide {
+            /*background-color: red;*/
+            width:100%;
+            position: absolute;
+            /*left:50%;*/
+            /*margin-left:-300px;*/
+            top: 7%;
+            text-align: center;
+        }
+
+        .title {
+            /*line-height:10vh;*/
+            /*font-weight: bold;*/
+            color: #e2dedf;
+        }
+        #t_Entlish {
+            font-size: 15vh;
+            word-spacing: 5px;
+            font-family:'Bodoni MT';
+        }
+        #t_Chinese {
+            font-size: 8vh;
+            letter-spacing: 5px;
+            font-family: HYZHONGXIUTIJ;
+        }
+
+        @font-face {
+            font-family: "HYZHONGXIUTIJ";
+            src: url("font/HYZHONGXIUTIJ.TTF")
+        }
+
+        /*按钮*/
+
+        #button_slide {
+            position: absolute;
+            /*background-color: red;*/
+            width:740px;
+            top: 33%;
+            left: 50%;
+            margin-left:-370px;
+        }
+
+        #button_slide_left {
+            width: 50%;
+            /*background-color: red;*/
+            height: 100px;
+            float: left;
+        }
+
+        #button_slide_right {
+            width: 50%;
+            /*background-color: rebeccapurple;*/
+            height: 100px;
+            float: left;
+        }
+
+        .btn {
+            margin: 0 auto;
+            display: block;
+            width:80%;
+            list-style-type: none;
+            text-align: center;
+            padding: 2vh;
+            border-radius: 17px;
+            border: solid 1px #e2dedf;
+            margin-top: 50px;
+            background-color: transparent;
+            /*字体*/
+            font-size: 3vh;
+            font-family: HYZHONGXIUTIJ;
+            letter-spacing:5px;
+            /*鼠标放上时背景变化时间*/
+            transition: background-color 1.4s ease;
+            -webkit-transition: background-color 1.4s ease;
+            -moz-transition: background-color 1.4s ease;
+            -o-transition: background-color 1.4s ease;
+        }
+
+        .btn_left {
+            background-color: #e2dedf;
+        }
+
+        .btn_right {
+            color:white;
+        }
+
+
+        .btn_left:hover /*鼠标经过变色*/ {
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn_right:hover /*鼠标经过变色*/ {
+            background-color: #e2dedf;
+            color: black;
+            cursor: pointer;
+        }
+
+        #info_slide {
+            position: absolute;
+            width: 680px;
+            top: 70%;
+            left: 50%;
+            margin-left: -355px;
+            background-color: rgba(226,222,223,0.8);
+            border-radius: 14px;
+            border: solid 1px rgba(226,222,223,0.8);
+            padding: 15px;
+        }
+        .info {
+            font-size: 15px;
+            font-family: HYZHONGXIUTIJ;
+            /*letter-spacing: 5px;*/
+            text-indent: 2em;
+            color: #0e2240;
+            font-weight:bold;
+            margin-top:10px;
+        }
+
+    </style>
+</head>
+
+<body style="overflow-x:hidden;overflow-y:hidden">
+    <div class="container">
+        <div id="title_slide">
+            <p class="title" id="t_Entlish">Quentin Tarantino</p>
+            <p class="title" id="t_Chinese">电影欣赏与角色分析</p>
+        </div>
+
+
+        <div id="button_slide">
+            <div id="button_slide_left">
+                <input class="btn btn_left" type="button" value="经历" onclick="window.open('shengping.html')">
+                <input class="btn btn_left" type="button" value="电影" onclick="window.open('movie.html')">
+            </div>
+            <div id="button_slide_right">
+                <input class="btn btn_right" type="button" value="角色" onclick="window.open('character.html')">
+                <input class="btn btn_right" type="button" value="测试" onclick="window.open('test.html')">
+            </div>
+        </div>
+
+        <div id="info_slide">
+            <p class="info" style="text-indent:0px; margin-top:0px">作品介绍：</p>
+            <p class="info">本课件主要介绍鬼才导演昆汀早年的个人经历和制作者个人偏好的几部电影，以及影片中让人印象深刻的角色</p>
+            <p class="info">第82届奥斯卡金像奖最佳导演提名 第85届奥斯卡金像奖最佳原创剧本奖 </p>
+            <p class="info">第73届美国电影电视金球奖 第77届美国电影电视金球奖......</p>
+        </div>
+    </div>
+
+
+</body></html>

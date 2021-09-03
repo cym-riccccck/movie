@@ -1,0 +1,298 @@
+<!DOCTYPE html><html style="overflow: auto;"><head>
+    <meta charset="utf-8">
+    <title>测试</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+  
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <style type="text/css">
+      .content {
+            
+            width: 95%;
+            height: 90%;
+            position: absolute;
+            top: 5%;
+            left: 2.5%;
+        }
+        .return {
+            width: 9%;
+            height: 8%;
+            position: relative;
+            left: 87%;
+            top: 5%;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .topic {
+            width: 90%;
+            height: 65%;
+            position: relative;
+            left: 5%;
+            top: 8%;
+            /*background-color: #57a2df;*/
+            font-family: 'serif';
+            color: #ffffff;
+            /*text-align: center;*/
+        }
+        .qst {
+            width: 100%;
+            height: 16%;
+            font-size: 40px;
+            float: left;
+            text-align: center;
+        }
+
+        .option {
+            float: left;
+            height: 12%;
+            width: 100%;
+            font-size: 35px;
+            margin-top: 2%;
+            cursor: pointer;
+        }
+        .op-content{
+            width: 40%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .result {
+            width: 7.5vw;
+            height: 20vh;
+            position: absolute;
+            left: 70vw;
+            top: 18vh;
+            
+            /*background-color: chartreuse;*/
+        }
+        .bg{
+            width: 7.5vw;
+            height: 20vh;
+            position: absolute;
+            left: 70vw;
+            top: 18vh;
+            
+            background-image: url("image/right.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrongbg{
+            width: 7.5vw;
+            height: 20vh;
+            position: absolute;
+            left: 70vw;
+            top: 18vh;
+            
+            background-image: url("image/wrong.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .last {
+            width: 10%;
+            height: 15%;
+            position: relative;
+            top: 8%;
+            left: 5%;
+            cursor: pointer;
+        }
+
+        .next {
+            width: 10%;
+            height: 15%;
+            position: relative;
+            top: -20vh;
+            left: 85%;
+            cursor: pointer;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+
+    </style>
+    <body><html>
+    
+        <nav>
+            <ul>
+              <li><a class="current" href="kunting.html" data-hover="Home">首页</a></li>
+              <li><a href="shengping.html" data-hover="Exprience">经历</a></li>
+              <li><a href="character.html" data-hover="Character">角色</a></li>
+              <li><a href="movie.html" data-hover="Movie">电影</a></li>
+            </ul>
+          </nav>
+          
+          <div style="text-align:center;clear:both">
+          <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+          <script src="/follow.js" type="text/javascript"></script>
+          </div>
+         
+            <div class="return">
+                <a href="kunting.html">
+                <img src="image/back.jpg" ></a>
+              </div>
+          
+          <!-- <a class="return1" href="kunting.html">
+              <div class="return"></div>
+            </a> -->
+          
+          <div class="content">
+
+          </div>
+          <div class="topic">
+            <div class="qst" id="qst">1、下列哪部电影是昆汀的处女作？</div>
+            <div class="option">
+                <div class="op-content" id="opa" onclick="showResult('A')">
+                    A：《低俗小说》
+                </div>
+            </div>
+            <div class="option">
+                <div class="op-content" id="opb" onclick="showResult('B')">
+                    B：《落水狗》
+                </div>
+            </div>
+            <div class="option">
+                <div class="op-content" id="opc" onclick="showResult('C')">
+                    C：《危险关系》
+                </div>
+            </div>
+            <div class="option">
+                <div class="op-content" id="opd" onclick="showResult('D')">
+                    D：《杀死比尔》
+                </div>
+            </div>
+            <div class="result" id="rt">
+            </div>
+        </div>
+        
+        <div class="last" onclick="showlast()">
+            <img src="image/next.jpg">
+        </div>
+        <div class="next" onclick="shownext()">
+            <img src="image/last.jpg">
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function createTest(question, optionA, optionB, optionC, optionD, answer) {
+        var o = new Object();
+        o.question = question;
+        o.optionA = optionA;
+        o.optionB = optionB;
+        o.optionC = optionC;
+        o.optionD = optionD;
+        o.answer = answer;
+        return o;
+    }
+
+    //初始化题库
+    var arr = new Array(5);
+    arr[0] = createTest("1、下列哪部电影是昆汀的处女作？", "A：《低俗小说》", "B：《落水狗》", "C：《危险关系》", "D：《杀死比尔》", "B");
+    arr[1] = createTest("2、《低俗小说》中执行马沙任务的手下的哪两位？", "A：文森特和朱尔斯", "B：小南瓜和小兔子", "C：姜戈和金·舒尔茨", "D：Gogo和苏菲", "A");
+    arr[2] = createTest("3、《杀死比尔1》中the bride复仇名单上第一个人是谁？", "A：维尼塔", "B：服部半藏", "C：石井尾莲", "D：苏菲", "C");
+    arr[3] = createTest("4、《被解救的姜戈》中二人计划如何解救布鲁姆希达？",
+        "A：假意购买角斗黑奴再买走布鲁姆希达", "B：杀死种植园主人卡尔文·坎迪", "C：夜里潜入偷偷带走", "D：闯入庄园强行带走", "A");
+    
+    //全局变量计数
+    var count = 0;
+    var myAnswer = new Array(4);
+    for (var i = 0; i < myAnswer.length; i++)
+        myAnswer[i] = "无";
+
+    //上一题
+    function showlast() {
+
+        if (count <= 0) {
+            alert("当前是第一题！");
+            count = 0;
+        } else{
+            count--;
+            var wrong = document.getElementById("rt");
+            console.log(wrong.className);
+            wrong.setAttribute("class", "result");
+        }
+        Print();//打印题目
+        img();
+    }
+
+    //下一题
+    function shownext() {
+        console.log(count);
+        if (count == 5) {
+            alert("当前已是最后一题！");
+            count = 4;
+        } else {
+            count++;
+            console.log(count);
+            var wrong = document.getElementById("rt");
+            console.log(wrong.className);
+            wrong.setAttribute("class", "result");
+        }
+        Print();//打印题目
+    }
+
+    //打印题目
+    function Print() {
+
+        console.log("print");
+        var content = document.getElementById("qst");
+        content.firstChild.nodeValue = arr[count].question;
+        var opa = document.getElementById("opa");
+        opa.lastChild.nodeValue = arr[count].optionA;
+        var opb = document.getElementById("opb");
+        opb.lastChild.nodeValue = arr[count].optionB;
+        var opc = document.getElementById("opc");
+        opc.lastChild.nodeValue = arr[count].optionC;
+        var opd = document.getElementById("opd");
+        opd.lastChild.nodeValue = arr[count].optionD;
+
+    }
+    function img() {
+        document.getElementById("optionA").style.backgroundImage = 'url('+'../images/a.png'+')';
+        document.getElementById("optionB").style.backgroundImage = 'url('+'../images/b.png'+')';
+        document.getElementById("optionC").style.backgroundImage = 'url('+'../images/c.png'+')';
+        document.getElementById("optionD").style.backgroundImage = 'url('+'../images/d.png'+')';
+    }
+    function imgChange(myanswer) {
+        if (myanswer=="A"){
+            document.getElementById("optionA").style.backgroundImage = 'url('+'../images/aR.png'+')';
+        }
+        if (myanswer=="B"){
+            document.getElementById("optionB").style.backgroundImage = 'url('+'../images/bR.png'+')';
+        }
+        if (myanswer=="C"){
+            document.getElementById("optionC").style.backgroundImage = 'url('+'../images/cR.png'+')';
+        }
+        if (myanswer=="D"){
+            document.getElementById("optionD").style.backgroundImage = 'url('+'../images/dR.png'+')';
+        }
+    }
+    function showResult(getObjs) {
+        console.log(getObjs);
+        if (getObjs == arr[count].answer) {
+            // img();
+            console.log("right");
+            var div = document.getElementById("rt");
+            console.log(div.className);
+            div.setAttribute("class", "bg");
+            // imgChange(getObjs);
+
+        } else {
+            // img();
+            var wrong = document.getElementById("rt");
+            console.log(wrong.className);
+            wrong.setAttribute("class", "wrongbg");
+            // imgChange(getObjs);
+        }
+
+    }
+    function jump() {
+        window.location.href="kunting.html";
+    }
+</script>
+
+    </html></body>
+    

@@ -1,0 +1,102 @@
+<!DOCTYPE html><html style="overflow: auto;"><head>
+    <meta charset="utf-8">
+    <title>电影介绍</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+  
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+    <style type="text/css">
+     .content1 {
+        width: 98%;
+        height: 98%;
+        /*position: relative;*/
+        left: 1%;
+        top: 1%;
+    }
+
+    .content2 {
+        width: 80%;
+        height: 80%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        position: absolute;
+        left: 12%;
+        top: 25%;
+
+    }
+
+    .bill {
+        width: 25%;
+        height: 80%;
+        background-image: url("../kunting/image/people/kb1.jpeg");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+        float: left;
+        cursor: pointer;
+    }
+
+    .fiction {
+        width: 25%;
+        height: 80%;
+        background-image: url("../kunting/image/people/disu.jpg");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+        float: left;
+        margin-left: 10%;
+        cursor: pointer;
+    }
+
+    .jg {
+        width: 25%;
+        height: 80%;
+        background-image: url("../kunting/image/people/jiangge.jpg");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+        float: left;
+        margin-left: 9.5%;
+        cursor: pointer;
+    }
+    </style>    
+
+
+<body><html>
+    
+    <nav>
+        <ul>
+          <li><a class="current" href="kunting.html" data-hover="Home">首页</a></li>
+          <li><a href="shengping.html" data-hover="Exprience">经历</a></li>
+          <li><a href="character.html" data-hover="Character">角色</a></li>
+          <li><a href="test.html" data-hover="Test">测试</a></li>
+        </ul>
+      </nav>
+      <p style=" font-size: x-large;color: aliceblue;text-align: center;" >movie introduction</p>
+
+      <div style="text-align:center;clear:both">
+      <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+      <script src="/follow.js" type="text/javascript"></script>
+      </div>
+
+      <div class="content1">
+          
+          <div class="content2">
+            <div class="bill" onclick="jump('bill')"></div>
+            <div class="fiction" onclick="jump('fiction')"></div>
+            <div class="jg" onclick="jump('jg')"></div>
+          </div>
+      </div>
+
+      <script>
+        function jump(getobjs) {
+            if (getobjs == 'bill') {
+                window.location.href = 'bill.html';
+            } else if (getobjs == 'fiction') {
+                window.location.href = 'fiction.html';
+            } else if (getobjs == 'jg') {
+                window.location.href = 'jg.html';
+            } 
+        }
+    </script>
+
+</body></html>
