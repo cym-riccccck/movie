@@ -50,6 +50,10 @@
             font-size: 35px;
             margin-top: 2%;
             cursor: pointer;
+            
+        }
+        .option:hover{
+            background-color: rgb(221, 163, 163);
         }
         .op-content{
             width: 40%;
@@ -76,6 +80,7 @@
             background-image: url("image/right.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
+           
         }
         .wrongbg{
             width: 7.5vw;
@@ -87,6 +92,7 @@
             background-image: url("image/wrong.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
+            
         }
         .last {
             width: 10%;
@@ -109,7 +115,9 @@
             width: 100%;
             height: 100%;
         }
-
+        .test:visited{
+            color:greenyellow;
+        }
 
     </style>
     <body><html>
@@ -123,10 +131,10 @@
             </ul>
           </nav>
           
-          <div style="text-align:center;clear:both">
+         <!--<div style="text-align:center;clear:both">
           <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
           <script src="/follow.js" type="text/javascript"></script>
-          </div>
+          </div> -->
          
             <div class="return">
                 <a href="index.html">
@@ -148,8 +156,9 @@
                 </div>
             </div>
             <div class="option">
+                
                 <div class="op-content" id="opb" onclick="showResult('B')">
-                    B：《落水狗》
+                     B：《落水狗》
                 </div>
             </div>
             <div class="option">
@@ -178,7 +187,7 @@
 
 <script>
     function createTest(question, optionA, optionB, optionC, optionD, answer) {
-        var o = new Object();
+        var o = new Object();//新创建一个对象
         o.question = question;
         o.optionA = optionA;
         o.optionB = optionB;
@@ -192,7 +201,7 @@
     var arr = new Array(5);
     arr[0] = createTest("1、下列哪部电影是昆汀的处女作？", "A：《低俗小说》", "B：《落水狗》", "C：《危险关系》", "D：《杀死比尔》", "B");
     arr[1] = createTest("2、《低俗小说》中执行马沙任务的手下的哪两位？", "A：文森特和朱尔斯", "B：小南瓜和小兔子", "C：姜戈和金·舒尔茨", "D：Gogo和苏菲", "A");
-    arr[2] = createTest("3、《杀死比尔1》中the bride复仇名单上第一个人是谁？", "A：维尼塔", "B：服部半藏", "C：石井尾莲", "D：苏菲", "C");
+    arr[2] = createTest("3、《杀死比尔1》中the bride复仇名单上第一个人是谁？", "A：石井尾莲", "B：巴德", "C：维尼塔", "D：苏菲", "C");
     arr[3] = createTest("4、《被解救的姜戈》中二人计划如何解救布鲁姆希达？",
         "A：假意购买角斗黑奴再买走布鲁姆希达", "B：杀死种植园主人卡尔文·坎迪", "C：夜里潜入偷偷带走", "D：闯入庄园强行带走", "A");
     
@@ -250,26 +259,8 @@
         opd.lastChild.nodeValue = arr[count].optionD;
 
     }
-    function img() {
-        document.getElementById("optionA").style.backgroundImage = 'url('+'../image/a.png'+')';
-        document.getElementById("optionB").style.backgroundImage = 'url('+'../image/b.png'+')';
-        document.getElementById("optionC").style.backgroundImage = 'url('+'../image/c.png'+')';
-        document.getElementById("optionD").style.backgroundImage = 'url('+'../image/d.png'+')';
-    }
-    function imgChange(myanswer) {
-        if (myanswer=="A"){
-            document.getElementById("optionA").style.backgroundImage = 'url('+'../image/aR.png'+')';
-        }
-        if (myanswer=="B"){
-            document.getElementById("optionB").style.backgroundImage = 'url('+'../image/bR.png'+')';
-        }
-        if (myanswer=="C"){
-            document.getElementById("optionC").style.backgroundImage = 'url('+'../image/cR.png'+')';
-        }
-        if (myanswer=="D"){
-            document.getElementById("optionD").style.backgroundImage = 'url('+'../image/dR.png'+')';
-        }
-    }
+    
+
     function showResult(getObjs) {
         console.log(getObjs);
         if (getObjs == arr[count].answer) {
@@ -290,7 +281,7 @@
 
     }
     function jump() {
-        window.location.href="kunting.html";
+        window.location.href="index.html";
     }
 </script>
 
